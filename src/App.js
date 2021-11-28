@@ -1,14 +1,6 @@
 import React from "react";
 import { ProductGrid } from "./components/ProductGrid";
-import Button from "react-bootstrap/Button";
-import {
-  Navbar,
-  Container,
-  Nav,
-  NavDropdown,
-  Form,
-  FormControl,
-} from "react-bootstrap";
+
 function App() {
   return (
     <div>
