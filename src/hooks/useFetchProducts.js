@@ -1,20 +1,19 @@
-import { useEffect, useState } from 'react'
-import {getProducts} from '../helpers/getProducts'
-export const useFetchProducts = () => {
-    const [products, setProducts] = useState({
-        data:[],
-        loading:true
+import { useEffect, useState } from 'react';
+import getProducts from '../helpers/getProducts';
+
+const useFetchProducts = (params = '') => {
+  const [products, setProducts] = useState({
+    data: [],
+    loading: true,
+  });
+  useEffect(() => {
+    getProducts(params).then((product) => {
+      setProducts({
+        data: product,
+        loading: false,
+      });
     });
-    useEffect(() => {
-        getProducts()
-            .then(products=>{
-                setProducts({
-                    data:products,
-                    loading:false,
-                });
-            });
-    }, []);
-    return products;
-}
-
-
+  }, []);
+  return products;
+};
+export default useFetchProducts;
