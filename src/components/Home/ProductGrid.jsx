@@ -10,11 +10,10 @@ import getProductsSearch from '../../helpers/getProductsSearch';
 const ProductGrid = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { data } = useFetchProducts();
+  const { data } = useFetchProducts(); // recupera los datos detos asincronicos
   const [products, setProducts] = useState([]);
   useEffect(() => {
     setProducts(data);
-    console.log(products);
   }, [data]);
   // const [products, setProducts] = useState([]);
   // eslint-disable-next-line no-unused-vars
@@ -28,7 +27,7 @@ const ProductGrid = () => {
     const productsSearch = getProductsSearch(data, searchText);
     e.preventDefault();
     navigate(`?q=${searchText}`);
-    setProducts({ data: productsSearch, loading: false });
+    setProducts(productsSearch);
   };
 
   return (
@@ -46,7 +45,6 @@ const ProductGrid = () => {
 
       <hr />
       <div className="card-grid">
-        <h1>TOTAL:</h1>
         {products.map((product) => {
           const { product_name: productName, price, image, _id: id } = product;
           return (
