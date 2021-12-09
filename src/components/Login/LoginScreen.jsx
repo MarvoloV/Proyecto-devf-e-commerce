@@ -19,7 +19,7 @@ const LoginScreen = () => {
       </button>
       <p>
         Si no tienes cuenta registrate
-        <Link to="/signup">aquí</Link>
+        <Link to="/singup">aquí</Link>
       </p>
     </div>
   );

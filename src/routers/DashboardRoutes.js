@@ -5,7 +5,7 @@ import SingUp from '../components/SingUp/SingUp';
 import LoginScreen from '../components/Login/LoginScreen';
 
 const DashboardRoutes = () => (
-  <div className="container">
+  <div>
     <Routes>
       <Route path="singup" element={<SingUp />} />
       <Route path="login" element={<LoginScreen />} />

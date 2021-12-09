@@ -7,6 +7,8 @@ import ProductItem from './ProductItem';
 import useFormProduct from '../../hooks/useFormProduct';
 import getProductsSearch from '../../helpers/getProductsSearch';
 
+import 'animate.css';
+
 const ProductGrid = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -44,7 +46,7 @@ const ProductGrid = () => {
       </form>
 
       <hr />
-      <div className="card-grid">
+      <div className="row row-cols-1 row-cols-md-4 g-4">
         {products.map((product) => {
           const { product_name: productName, price, image, _id: id } = product;
           return (
