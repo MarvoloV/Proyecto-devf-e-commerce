@@ -4,6 +4,7 @@ import ProductDetail from '../components/ProductDetail/ProductDetail';
 import SingUp from '../components/SingUp/SingUp';
 import LoginScreen from '../components/Login/LoginScreen';
 import AddProduct from '../components/AddProduct/AddProduct';
+import ShoppingCart from '../components/ShoppingCart/ShoppingCart';
 
 const DashboardRoutes = () => (
   <div>
@@ -13,6 +14,8 @@ const DashboardRoutes = () => (
       <Route path="productos" element={<ProductGrid />} />
       <Route path="productos/:productid" element={<ProductDetail />} />
       <Route path="addproduct" element={<AddProduct />} />
+      <Route path="shoppingcart" element={<ShoppingCart />} />
+      <Route path="/?=" element={<ProductGrid />} />
       <Route path="/" element={<ProductGrid />} />
     </Routes>
   </div>

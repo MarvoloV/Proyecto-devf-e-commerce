@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import axios from 'axios';
 import Alert from './Alert';
-
 import './SingUp.css';
 /*  "first_name": "Jorge",
     "last_name": "Adco",
@@ -47,19 +47,20 @@ const SingUp = () => {
     const url = 'https://ecomerce-master.herokuapp.com/api/v1/signup';
     const config = {
       method: 'post',
+      url,
       headers: {
         'Content-Type': 'application/json',
       },
-      body: data,
+      data,
     };
-    fetch(url, config)
-      .then((response) => response.text())
-      .then((result) => {
+    axios(config)
+      .then((response) => {
+        console.log(JSON.stringify(response.data));
         setAlert('Te has registrado Satisfactoriamente, dirígete a Login');
       })
       .catch((error) => {
         console.log(`error:${error}`);
-        setAlert(error.result.message);
+        setAlert(error.response.data.message);
       });
   };
   return (

@@ -2,7 +2,7 @@
 /* eslint implicit-arrow-linebreak: ["error", "below"] */
 const getProductsSearch = (products, name = '') => {
   if (name === '') {
-    return [];
+    return products;
   }
   const nameMinuscula = name.toLocaleLowerCase();
   return products.filter((product) =>

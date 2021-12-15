@@ -54,11 +54,10 @@ const Header = () => {
   const handleSearch = (e) => {
     const productsSearch = getProductsSearch(data, searchText);
     e.preventDefault();
-    navigate(`?q=${searchText}`);
+    navigate(`productos/?q=${searchText}`);
     setProducts(productsSearch);
     e.target.value = '';
   };
-  console.log(rol);
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div className="container-fluid">
@@ -85,7 +84,7 @@ const Header = () => {
                 ${isActive ? 'active' : ''}`}
                 /* aria-current="page" */
               >
-                Home
+                Productos
               </NavLink>
             </li>
             {rol === 'ADMIN' && (
@@ -136,7 +135,7 @@ const Header = () => {
                 aria-labelledby="dropdownUser1"
               >
                 <li>
-                  <Link className="dropdown-item" to="/">
+                  <Link className="dropdown-item" to="/shoppingcart">
                     Carrito de Compra
                   </Link>
                 </li>
@@ -149,6 +148,7 @@ const Header = () => {
                     to="/login"
                     onClick={() => {
                       localStorage.clear();
+                      location.reload();
                     }}
                   >
                     Sign out
