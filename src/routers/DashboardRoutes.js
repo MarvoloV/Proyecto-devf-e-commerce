@@ -3,6 +3,7 @@ import ProductGrid from '../components/Home/ProductGrid';
 import ProductDetail from '../components/ProductDetail/ProductDetail';
 import SingUp from '../components/SingUp/SingUp';
 import LoginScreen from '../components/Login/LoginScreen';
+import AddProduct from '../components/AddProduct/AddProduct';
 
 const DashboardRoutes = () => (
   <div>
@@ -11,6 +12,7 @@ const DashboardRoutes = () => (
       <Route path="login" element={<LoginScreen />} />
       <Route path="productos" element={<ProductGrid />} />
       <Route path="productos/:productid" element={<ProductDetail />} />
+      <Route path="addproduct" element={<AddProduct />} />
       <Route path="/" element={<ProductGrid />} />
     </Routes>
   </div>

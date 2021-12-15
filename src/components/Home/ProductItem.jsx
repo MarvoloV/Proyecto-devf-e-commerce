@@ -11,9 +11,6 @@ const ProductItem = ({ productName, price, image, id }) => (
         <div className="card-body text-center">
           <h5 className="card-title text-center ">{productName}</h5>
           <p className="card-text text-center">{`$ ${price}`}</p>
-          <button type="button" className="btn btn-info ">
-            Comprar
-          </button>
         </div>
       </div>
     </div>

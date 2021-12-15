@@ -1,17 +1,15 @@
-/*
-
 form {
   max-width: 500px;
   margin: 0 auto;
 }
 
-h1 {
+/* h1 {
   font-weight: 100;
   color: white;
   text-align: center;
   padding-bottom: 10px;
   border-bottom: 1px solid rgb(79, 98, 148);
-}
+} */
 
 .form {
   background: #0e101c;
@@ -135,4 +133,3 @@ select {
   margin-bottom: 15px;
   font-size: 14px;
 }
- */

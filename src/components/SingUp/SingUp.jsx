@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable camelcase */
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from 'react';
@@ -5,7 +6,6 @@ import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import axios from 'axios';
 import Alert from './Alert';
 
 import './SingUp.css';
@@ -44,22 +44,22 @@ const SingUp = () => {
       gender,
       birth_date,
     });
+    const url = 'https://ecomerce-master.herokuapp.com/api/v1/signup';
     const config = {
       method: 'post',
-      url: 'https://ecomerce-master.herokuapp.com/api/v1/signup',
       headers: {
         'Content-Type': 'application/json',
       },
-      data,
+      body: data,
     };
-    axios(config)
-      .then((response) => {
-        console.log(JSON.stringify(response.data));
+    fetch(url, config)
+      .then((response) => response.text())
+      .then((result) => {
         setAlert('Te has registrado Satisfactoriamente, dirígete a Login');
       })
       .catch((error) => {
-        console.log(error.response.data.message);
-        setAlert(error.response.data.message);
+        console.log(`error:${error}`);
+        setAlert(error.result.message);
       });
   };
   return (
