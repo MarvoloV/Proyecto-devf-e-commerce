@@ -29,10 +29,7 @@ const ShoppingCart = () => {
         <div className="row">
           <div className="col-lg-10 offset-lg-1">
             <div className="cart_container">
-              <div className="cart_title">
-                Shopping Cart
-                <small> (1 item in your cart) </small>
-              </div>
+              <div className="cart_title">Shopping Cart</div>
               <div className="cart_items">
                 <ul className="cart_list">
                   {carrito.map((product) => {
