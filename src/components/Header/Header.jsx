@@ -43,7 +43,7 @@ const Header = () => {
   useEffect(() => {
     if (isLog) {
       fetchUserMe();
-      console.log(user);
+      //      console.log(user);
     }
   }, [isLog]);
 

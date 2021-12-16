@@ -34,7 +34,6 @@ const ProductDetail = () => {
     }
     setCarrito(auxCarrito);
     localStorage.setItem('carrito', JSON.stringify(auxCarrito));
-    console.log(carrito);
   };
   return (
     <>

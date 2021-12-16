@@ -21,7 +21,7 @@ const ShoppingCart = () => {
   }
   useEffect(() => {
     setPagoTotal(totalAux);
-    console.log(totalAux);
+    // console.log(totalAux);
   }, [carrito]);
   return (
     <div className="cart_section">

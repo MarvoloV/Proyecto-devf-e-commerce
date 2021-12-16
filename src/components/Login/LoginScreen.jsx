@@ -50,7 +50,7 @@ const LoginScreen = () => {
   const handleLogin = ({ email, password }) => {
     fetchLogin(email, password);
   };
-  console.log(errors);
+  // console.log(errors);
 
   return (
     <div className="container mt-5">

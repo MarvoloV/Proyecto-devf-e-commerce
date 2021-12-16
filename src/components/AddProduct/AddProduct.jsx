@@ -9,7 +9,7 @@ const AddProduct = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    /* formState: { errors }, */
   } = useForm();
   const AddProducts = async (
     product_name,
@@ -57,7 +57,7 @@ const AddProduct = () => {
   }) => {
     AddProducts(product_name, description, price, category, brand, sku, image);
   };
-  console.log(errors);
+  // console.log(errors);
   return (
     <div className="mt-5">
       <h1 className="mt-5">Add Product Screen</h1>
