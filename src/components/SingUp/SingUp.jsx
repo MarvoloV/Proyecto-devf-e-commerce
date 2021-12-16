@@ -55,11 +55,11 @@ const SingUp = () => {
     };
     axios(config)
       .then((response) => {
-        console.log(JSON.stringify(response.data));
+        // console.log(JSON.stringify(response.data));
         setAlert('Te has registrado Satisfactoriamente, dirígete a Login');
       })
       .catch((error) => {
-        console.log(`error:${error}`);
+        // console.log(`error:${error}`);
         setAlert(error.response.data.message);
       });
   };

@@ -10,6 +10,11 @@ const EcommerceContext = React.createContext();
 export const EcommerceProvider = ({ children }) => {
   const [token, setToken] = useState(JSON.parse(localStorage.getItem('token')));
   const [products, setProducts] = useState([]);
+  const [carrito, setCarrito] = useState(
+    localStorage.getItem('carrito')
+      ? JSON.parse(localStorage.getItem('carrito'))
+      : [],
+  );
   const { data } = useFetchProducts(); // recupera los datos detos asincronicos
   const [user, setUser] = useState(null);
   const [isLog, setIsLog] = useState(JSON.parse(localStorage.getItem('isLog')));
@@ -26,6 +31,8 @@ export const EcommerceProvider = ({ children }) => {
     setIsLog,
     rol,
     setRol,
+    carrito,
+    setCarrito,
   }; /*
    useMemo(
     () => ({

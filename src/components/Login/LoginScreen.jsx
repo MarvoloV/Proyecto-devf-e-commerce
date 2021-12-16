@@ -37,7 +37,7 @@ const LoginScreen = () => {
         navigate('/productos', { replace: true });
       })
       .catch((error) => {
-        console.log(error.response.data.message);
+        // console.log(error.response.data.message);
         setAlert(error.response.data.message);
       });
   };

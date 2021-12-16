@@ -36,12 +36,14 @@ const Header = () => {
     const url = 'https://ecomerce-master.herokuapp.com/api/v1/user/me';
     const usuario = await fetch(url, requestOptions);
     const userMe = await usuario.json();
-    console.log(userMe);
+    // console.log(userMe);
     setUser(userMe.user);
+    return userMe;
   };
   useEffect(() => {
     if (isLog) {
       fetchUserMe();
+      console.log(user);
     }
   }, [isLog]);
 
@@ -129,6 +131,7 @@ const Header = () => {
                   height="32"
                   className="rounded-circle"
                 />
+                {/* {user.first_name} */}
               </Link>
               <ul
                 className="dropdown-menu text-small"
